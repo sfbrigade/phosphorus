@@ -122,7 +122,7 @@ else:
         'name': {'type': 'String'},
         'address': {'type': 'String'},
         'city': {'type': 'String', 'Has Missing':True},
-        'phone': {'type': 'String', 'Has Missing':True},
+        'phone_number': {'type': 'String', 'Has Missing':True},
         }
 
     # Create a new deduper object and pass our data model to it.
