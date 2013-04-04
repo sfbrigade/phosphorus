@@ -47,7 +47,7 @@ logging.basicConfig(level=log_level)
 
 # Switch to our working directory and set up our input and out put paths,
 # as well as our settings and training file locations
-os.chdir('./examples/lives/')
+
 input_file = 'combined.csv'
 output_file = 'lives_output.csv'
 settings_file = 'lives_learned_settings2'
@@ -94,7 +94,9 @@ def readData(filename):
         reader = csv.DictReader(f)
         for row in reader:
             clean_row = [(k, preProcess(v)) for (k, v) in row.items()]
-            print row
+
+            if(row['name'] == ""):
+                print row
             row_id = int(row['Id'])
             data_d[row_id] = dedupe.core.frozendict(clean_row)
 
